@@ -28,9 +28,11 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
+        working-directory: portfolio_github_pages_islena
         run: npm install
 
       - name: Build
+        working-directory: portfolio_github_pages_islena
         run: npm run build
 
       - name: Setup Pages
@@ -39,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist"
+          path: portfolio_github_pages_islena/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
